@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdt.irslogics.com/kendo.2020.3.915/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/nch5hwg.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nch5hwg.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Expert Call</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div id="indicatior"></div>
+            <ul>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                <li><a href="#" class="nav-link">Plans and Pricing</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+                <li>
+                    <div class="button">
+                        <a href="#">Sign In</a>
+                    </div>
+                </li>
+            </ul>
+          </nav>
+          <div class="toggle-button" id="toggle-button">
+            <div class="toggle-bar">
+            </div>
+        </div>
+    </header>
+    <section>
+       <div class="blur-background">
+        <div class="white-background">
+            <div class="home-row">
+                <div class="home-left-column">
+                    <div class="left-container">
+                        <h1 class="home-large-text">Amazing Platform For Productive Meetings And Calls</h1>
+                        <p class="home-small-text">Lorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+                        <button class="home-buttons">Free Trial</button>
+                        <button class="home-buttons registration-button">Register Now</button>
+                    </div>
+                </div>
+                <div class="home-right-column">
+                    <!-- <img src="/Images/banner-image.png" alt="Home Banner Image" class="home-banner-image">
+                    <img src="/Images/arrow-background.png" alt="Arrow Background image" class="arrow-background-image">
+                    <img src="/Images/top-triangle-3d.png" alt="Top Middle Triangle" class="elements-3d top-middle-triangle">
+                    <img src="/Images/bottom-half-circle-3d.png" alt="Bottom Middle Half Circle" class="elements-3d bottom-middle-half-circle"> -->
+        
+                    <img src="/Images/Group 05.png" alt="Home Banner Image" class="home-banner-image">
+                    <!-- <img src="/Images/arrow-background.png" alt="Arrow Background image" class="arrow-background-image"> -->
+                    <img src="/Images/top-triangle-3d.png" alt="Top Middle Triangle" class="elements-3d top-middle-triangle">
+                    <img src="/Images/bottom-half-circle-3d.png" alt="Bottom Middle Half Circle" class="elements-3d bottom-middle-half-circle">
+        
+                    <!-- <img src="/Images/Animation-images/call-image1.png" alt="Call Image1" class="elements-3d call-image1">
+                    <img src="/Images/Animation-images/call-image2.png" alt="Call Image2" class="elements-3d call-image2"> -->
+                </div>
+               </div>
+               <img src="/Images/top-triangle-3d.png" alt="Top Left Triangle" class="elements-3d top-left-triangle">
+               <img src="/Images/bottom-half-circle-3d.png" alt="Bottom Left Half Circle" class="elements-3d bottom-left-half-circle">
+               <img src="/Images/bottom-right-triangle-3d.png" alt="Bottom Right Triangle" class="elements-3d bottom-right-triangle">
+           </div>
+        </div>   
+    </section>
+    <footer>
+        <p class="footer-text">© 2022 - ExpertCall</p>
+    </footer>
+    <script>
+           var indicator=document.getElementById('indicatior');
+    var item=document.querySelectorAll('nav ul li a');
+    function activeNavIndicator(indicatorLeftPosition,indicatorWidth)
+    {
+        indicator.style.left=(indicatorLeftPosition-3)+"px";
+        indicator.style.width=(indicatorWidth+5)+"px";
+    }
+   
+    item.forEach(link=>{
+        link.addEventListener('click',(e)=>{
+            function navbarIndicator()
+            {
+                activeNavIndicator(e.target.offsetLeft,e.target.offsetWidth);
+            }
+            if(e.path[0].innerHTML!='Sign In')
+            {
+                navbarIndicator();
+                
+            }
+            item.forEach(elements=>{
+                elements.classList.remove("active");
+            });
+            e.path[0].classList.add("active");
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var toggleButton =document.querySelector(".toggle-button");
+        let menuOpen=false;
+        toggleButton.addEventListener("click",function(){
+            if(!menuOpen)
+            {
+                this.classList.add("open");
+                menuOpen=true;
+            }
+            else
+            {
+                this.classList.remove("open");
+                menuOpen=false;
+            }
+        });
+        $("#toggle-button").click(function(){
+            console.log("Hey");
+            $("#navbar").toggleClass("mobile-navbar-hide");
+        });
+    </script>
+</body>
+</html>
